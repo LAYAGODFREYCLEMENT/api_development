@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy
 from django.contrib.postgres import fields as PostgresFields
 
 # Create your models here.
-class ProductCatergory(models.models):
+class ProductCatergory(models.Model):
     name = models.CharField(max_length=256)
     icon_url = models.URLField(blank=True)
     description = models.TextField(blank=False)
@@ -14,6 +14,13 @@ class ProductCatergory(models.models):
         related_name="children_catergories",
         on_delete=models.CASCADE,
     )
+
+    def __str__(self):
+        return self.name
+
+
+class Maker(models.Model):
+    name = models.CharField(max_length=512)
 
     def __str__(self):
         return self.name
