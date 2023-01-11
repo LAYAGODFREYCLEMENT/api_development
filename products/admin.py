@@ -5,3 +5,4 @@ from .models import ProductCatergory, Maker, Product
 admin.site.register(ProductCatergory)
 admin.site.register(Maker)
 admin.site.register(Product)
+ 
