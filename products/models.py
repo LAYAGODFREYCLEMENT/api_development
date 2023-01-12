@@ -51,7 +51,7 @@ class Product(models.Model):
         max_length=3, choices=Currency.choices, default=Currency.AMERICAN_DOLLAR
     )
 
-    variantion_product_ids = PostgresFields.ArrayField(
+    variation_product_ids = PostgresFields.ArrayField(
         models.IntegerField(null=True, blank=True), null=True, blank=True
     )
 
