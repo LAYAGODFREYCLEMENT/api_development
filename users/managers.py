@@ -12,7 +12,7 @@ class CustomUserManager(BaseUserManager):
             return user
 
     def create_superUser(self, email, password=None, **extra_fields):
-        user = self.create(
+        user = self.create_user(
             email,
             password,
             **extra_fields,
