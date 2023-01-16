@@ -5,8 +5,8 @@ from users.managers import CustomUserManager
 
 # Create your models here.
 class CustomUser(AbstractBaseUser, PermissionsMixin):
-    wmail = models.EmailField(unique=True)
-    is_staff = models.BooleanField(default=False)
+    email = models.EmailField(unique=True)
+    is_staff = models.BooleanField(default=True)
     is_active = models.BooleanField(default=True)
     date_joined = models.DateField(default=timezone.now)
 
