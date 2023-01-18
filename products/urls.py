@@ -5,5 +5,5 @@ app_name = "products"
 
 urlpatterns = [
     path("categories/", ProductCategoryListView.as_view(), name="categories-list"),
-    path("maker/", MakerListView.as_view(), name="maker-lis"),
+    path("maker/", MakerListView.as_view(), name="maker-list"),
 ]
