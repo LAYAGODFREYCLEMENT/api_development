@@ -1,2 +1,3 @@
 backend/settings.py
 db-backups/
+.Venv/
