@@ -4,7 +4,7 @@ from products.views import ProductCategoryListView, MakerListView, ProductListVi
 app_name = "products"
 
 urlpatterns = [
-    path("", ProductListView.as_view, name="maker-list"),
+    path("", ProductListView.as_view(), name="maker-list"),
     path("categories/", ProductCategoryListView.as_view(), name="categories-list"),
     path("maker/", MakerListView.as_view(), name="maker-list"),
 ]
