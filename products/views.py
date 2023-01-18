@@ -10,6 +10,5 @@ class ProductCategoryListView(ListAPIView):
 
 
 class MakerListView(ListAPIView):
-    class Meta:
-        serializer_class = Maker
-        querySet = Maker.objects.all()
+    serializer_class = Maker
+    queryset = Maker.objects.all()
