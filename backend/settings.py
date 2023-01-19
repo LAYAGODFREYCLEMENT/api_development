@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "products.apps.ProductsConfig",
     "users.apps.UsersConfig",
-    "authTokens.apps.AuthTokensConfig",
+    "authTokens.apps.AuthtokensConfig",
     "rest_framework_simplejwt.token_blacklist",
 ]
 
