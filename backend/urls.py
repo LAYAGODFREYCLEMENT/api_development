@@ -5,4 +5,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("products/", include("products.urls", namespace="products")),
     path("auth/", include("authTokens.urls", namespace="authTokens")),
+    path("users/", include("users.urls", namespace="users")),
 ]
