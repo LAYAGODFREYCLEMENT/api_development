@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from rest_framework.generics import ListAPIView
+
+from products.models import Maker, Product, ProductCategory
 from products.serializers import (
-    ProductCategorySerializer,
     MakerSerializer,
+    ProductCategorySerializer,
     ProductSerializer,
 )
-from products.models import ProductCategory, Maker, Product
 
 
 class ProductCategoryListView(ListAPIView):

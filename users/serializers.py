@@ -1,10 +1,11 @@
+from django.contrib.auth.password_validation import validate_password
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
-from .models import CustomUser
-from django.contrib.auth.password_validation import validate_password
+
+from users.models import CustomUser
 
 
-class CustomUserSerializer(serializers.ModelSerializer):
+class CustomUserRegistrationSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(
         required=True,
         validators=[
@@ -40,17 +41,19 @@ class CustomUserSerializer(serializers.ModelSerializer):
         ]
 
     def validate(self, attrs):
-        if attrs["password"] != attrs["password"]:
+        if attrs["password"] != attrs["password2"]:
             raise serializers.ValidationError(
                 {"Password": "Passwords must match"},
             )
-        return
+        return attrs
 
     def create(self, validated_data):
-        user = CustomUser.objects.all(
-            eamil=validated_data["email"],
+        user = CustomUser.objects.create_user(
+            email=validated_data["email"],
         )
         user.set_password(
             validated_data["password"],
         )
         user.save()
+
+        return user
