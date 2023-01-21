@@ -1,5 +1,6 @@
-from django.urls import path, include
-from products.views import ProductCategoryListView, MakerListView, ProductListView
+from django.urls import include, path
+
+from products.views import MakerListView, ProductCategoryListView, ProductListView
 
 app_name = "products"
 

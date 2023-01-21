@@ -1,6 +1,7 @@
+from django.contrib.postgres import fields as PostgresFields
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from django.contrib.postgres import fields as PostgresFields
+
 
 # Create your models here.
 class ProductCategory(models.Model):
